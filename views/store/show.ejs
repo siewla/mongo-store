@@ -7,7 +7,7 @@
         <div class="show-container center-align row">
             <h3><%=item.name  %></h3>
             <div class="show-card-container row">
-                <img src="<%= item.img %>">
+                <img src="<%= item.img %>" class = "image-show">
                 <p><%= item.description %></p>
                 <h4>Price: <%= item.price %> </h4>
                 <% if(item.qty=== 0) { %>
@@ -15,7 +15,7 @@
                 <% } else { %>       
                     <h4>Quantity: <%= item.qty %></h4>
                 <% } %> 
-                <a class="btn-small">Buy</a>
+                <!-- <a class="btn-small">Buy</a> -->
                 <form action="/<%=item.name%>/edit">
                     <input type="submit" value="Edit" class="edit-button">
                 </form>
