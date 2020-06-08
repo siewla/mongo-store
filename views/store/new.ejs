@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <h4>Add new item</h4>
+        <div class="new-form">
+            <form action="/create" method="POST">
+                <div>
+                    <label for='name'>Name of product</label>
+                    <input type='text' name='name' placeholder="Enter item's name" required>
+                </div>
+                <div>
+                    <label for='description'>Description</label>
+                    <input type='text' name='description' placeholder="Enter description" required>
+                </div>
+                <div>
+                    <label for='img'>Image</label>
+                    <input type='url' name='img' placeholder="link of image" required>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for='price'>Price</label>
+                        <input type='number' name='price' placeholder="Enter price of product"  min='0' required>
+                    </div>
+                    <div class="col">
+                        <label for='qty'>Quantity</label>
+                        <input type='number' name='qty' placeholder="Enter quantity of product" min='0' required>
+                    </div>
+                </div>
+                <div class="add">
+                    <button type="submit">Add New Product</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

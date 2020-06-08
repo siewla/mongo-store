@@ -1,0 +1,47 @@
+GET http://localhost:3000/ 
+
+###
+GET http://localhost:3000/bins
+
+###
+GET http://localhost:3000/pencil
+
+###
+POST http://localhost:3000/create
+content-type: application/json
+
+{
+    "name":"Test",
+    "description":"Test",
+    "img":"#",
+    "price":10,
+    "qty":1
+}
+###
+POST http://localhost:3000/create
+content-type: application/json
+
+###
+PUT http://localhost:3000/bins
+content-type: application/json
+
+{
+    "name":"Test",
+    "description":"Test",
+    "img":"#",
+    "price":10,
+    "qty":1
+}
+
+###
+PUT http://localhost:3000/xxx
+content-type: application/json
+
+{
+    "name":"Test",
+    "description":"Test",
+    "img":"#",
+    "price":10,
+    "qty":1
+}
+

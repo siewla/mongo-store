@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <div class="show-container center-align row">
+            <h3><%=item.name  %></h3>
+            <div class="show-card-container row">
+                <img src="<%= item.img %>">
+                <p><%= item.description %></p>
+                <h4>Price: <%= item.price %> </h4>
+                <% if(item.qty=== 0) { %>
+                    <h4>Out of stock</h4>
+                <% } else { %>       
+                    <h4>Quantity: <%= item.qty %></h4>
+                <% } %> 
+                <a class="btn-small">Buy</a>
+                <form action="/<%=item.name%>/edit">
+                    <input type="submit" value="Edit" class="edit-button">
+                </form>
+            </div> 
+            <form action="/<%=item.name%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" class="delete-button">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <table id="table_id" class="display">
+            <thead>
+                <tr>
+                    <th>index</th>
+                    <th>name</th>
+                    <th>image</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach((item, index) => { %>
+                    <% let indexTable = index +1; %>
+                    <tr>
+                        <td><%=indexTable%></td>
+                        <td><a href= '/<%=item.name%>'><%=item.name%></a></td>
+                        <td><img src="<%= item.img %>" class='image-table'></td>
+                        <td><%= item.price%></td>
+                    
+                        <% if(item.qty=== 0) { %>
+                            <td>Out of stock</td>
+                        <% } else { %>       
+                            <td>Quantity: <%= item.qty %></td>
+                        <% } %> 
+
+                        <td>
+                            <div>
+                                <form action="/<%=item.name%>/edit">
+                                    <input type="submit" value="Edit" class="edit-button">
+                                </form>
+                                <form action="/<%=item.name%>?_method=DELETE" method="POST">
+                                    <input type="submit" value="Delete" class="delete-button">
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </body>
+</html>

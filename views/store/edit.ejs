@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <h4>Edit item</h4>
+        <div class="new-form">
+            <form action="/<%= item.name%>?_method=PUT" method="POST">
+                <div>
+                    <label for='name'>Name of product</label>
+                    <input type='text' name='name' value="<%=item.name%>" required>
+                </div>
+                <div>
+                    <label for='description'>Description</label>
+                    <input type='text' name='description' value="<%=item.description%>" required>
+                </div>
+                <div>
+                    <label for='img'>Image</label>
+                    <input type='url' name='img' value="<%=item.img%>" required>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for='price'>Price</label>
+                        <input type='number' name='price' value="<%=item.price%>" min='0' required>
+                    </div>
+                    <div class="col">
+                        <label for='qty'>Quantity</label>
+                        <input type='number' name='qty' value="<%=item.qty%>" min='0' required>
+                    </div>
+                </div>
+                <div class="update">
+                    <button type="submit">Update Item</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

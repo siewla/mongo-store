@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head.ejs') %>
+    </head>
+    <body>
+        <div class="container">
+            <% items.forEach(item => { %>
+                <a href="<%= item.name.toLowerCase() %>">
+                    <div class="card">
+                        <div class="card-content">
+                            <img src="<%= item.img %>" class="item-image">
+                            <h3>Price: $ <%=item.price%></h3>
+                            <p><%= item.description %></p>
+                        </div>
+                    </div>
+                </a>
+            <% }) %>   
+        </div>
+    </body>
+</html>
